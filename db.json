@@ -1,3 +1,9 @@
 {
-  "movements": []
+  "movements": [
+    {
+      "movementName": "bench",
+      "movementWeight": "100",
+      "id": 1
+    }
+  ]
 }
