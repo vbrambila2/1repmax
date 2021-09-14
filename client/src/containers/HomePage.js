@@ -18,7 +18,7 @@ const HomePage = () => {
   
    return (
        <div className={classes.homePageContent} >
-            <Header title={"One Rep Max"}/>
+            <Header title={"One Rep"}/>
             <div>
                 <MovementsList />
                 <MovementList />
