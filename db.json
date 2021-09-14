@@ -2,13 +2,18 @@
   "movements": [
     {
       "movementName": "squat",
-      "movementWeight": "344",
+      "movementWeight": "455",
       "id": 3
     },
     {
       "movementName": "deadlift",
       "movementWeight": "385",
       "id": 4
+    },
+    {
+      "movementName": "bench",
+      "movementWeight": "112",
+      "id": 5
     }
   ]
 }
