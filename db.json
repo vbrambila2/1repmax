@@ -4,6 +4,11 @@
       "movementName": "squat",
       "movementWeight": "234",
       "id": 2
+    },
+    {
+      "movementName": "bench",
+      "movementWeight": "100",
+      "id": 3
     }
   ]
 }
