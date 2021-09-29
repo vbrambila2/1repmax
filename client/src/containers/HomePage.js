@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import FabButton from '../components/FabButton';
 import MovementList from './MovementList';
 import MovementsList from './FetchedMovements';
-import { Field, reduxForm } from 'redux-form';
+// import { Field, reduxForm } from 'redux-form';
  
 const useStyles = makeStyles(() => ({
    homePageContent: {
@@ -17,36 +17,59 @@ const useStyles = makeStyles(() => ({
    }
 }));
 
-const renderInputName = ({ input, label, meta }) => {
-    return (
-        <div>
-            <label>{label}:   </label>
-            <input {...input} type="text" /> 
-            <div style={{fontSize: "15px", color:"red"}}></div>
-        </div>    
-    )  
-};
+// const renderInputName = ({ input, label, meta }) => {
+//     return (
+//         <div>
+//             <label>{label}:   </label>
+//             <input {...input} type="text" /> 
+//             <div style={{fontSize: "15px", color:"red"}}></div>
+//         </div>    
+//     )  
+// };
 
-const renderInputWeight = ({ input, label, meta }) => {
-    return (
-        <div>
-            <label>{label}:   </label>
-            <input {...input} type="number" /> 
-            <div style={{fontSize: "15px", color:"red"}}></div>
-        </div>    
-    )  
-};
+// const renderInputWeight = ({ input, label, meta }) => {
+//     return (
+//         <div>
+//             <label>{label}:   </label>
+//             <input {...input} type="number" /> 
+//             <div style={{fontSize: "15px", color:"red"}}></div>
+//         </div>    
+//     )  
+// };
  
 const HomePage = (props) => {
     const classes = useStyles();
 
     // const myDynamicManifest = {
+    //     "short_name": "One Rep",
+    //     "name": "One Rep Max Apps",
+    //     "icons": [
+    //         {
+    //         "src": "favicon.ico",
+    //         "sizes": "64x64 32x32 24x24 16x16",
+    //         "type": "image/x-icon"
+    //         },
+    //         {
+    //         "src": "logo192.png",
+    //         "type": "image/png",
+    //         "sizes": "192x192"
+    //         },
+    //         {
+    //         "src": "logo512.png",
+    //         "type": "image/png",
+    //         "sizes": "512x512"
+    //         }
+    //     ],
     //     "movements": [
     //         {
     //         "movementName": "squat",
     //         "movementWeight": "121",
     //         }
-    //     ]
+    //     ],
+    //     "start_url": ".",
+    //     "display": "standalone",
+    //     "theme_color": "#000000",
+    //     "background_color": "#ffffff"
     // };
 
     // const stringManifest = JSON.stringify(myDynamicManifest);
@@ -68,6 +91,9 @@ const HomePage = (props) => {
     //     )
     // };
     // console.log(myDynamicManifest.movements, "function");
+
+    // const fileDestination = host + '.manifest.json';
+    // const filename = path.join(global.publicFolder, fileDestination);
 
    return (
        <div className={classes.homePageContent} >
@@ -99,8 +125,10 @@ const HomePage = (props) => {
    );
 };
 
-const formWrap = reduxForm({
-    form: 'homeForm',
-})(HomePage);
+// const formWrap = reduxForm({
+//     form: 'homeForm',
+// })(HomePage);
  
-export default (formWrap);
+// export default (formWrap);
+
+export default (HomePage);
