@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { createMovement } from '../actions/index';
-import { Field, reduxForm } from 'redux-form';
+import { Field, formValues, reduxForm } from 'redux-form';
+import history from '../history';
 
 const useStyles = makeStyles(() => ({
     addPage: {
@@ -69,8 +70,23 @@ const renderError = ({ error, touched }) => {
 
 const AddPage = (props) => {
     const classes = useStyles();
+    // const onSubmit = (formValues) => {
+    //     props.createMovement(formValues);
+    // };
     const onSubmit = (formValues) => {
-        props.createMovement(formValues);
+        history.push('/')
+        var formString = JSON.stringify(formValues);
+        var fs = require('browserify-fs');
+        fs.mkdir('/moves', function() {
+            fs.writeFile('/moves/data.json', formString, function() {
+                fs.readFile('/moves/data.json', 'utf-8', function(err, data) {
+                    console.log(data, "data");
+                });
+            });
+        });
+        console.log(props.move, "move state");
+        console.log(formValues, "formValues");
+        console.log(formString, "formString");
     };
 
     return (
