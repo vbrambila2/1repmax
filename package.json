@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vbrambila2/1repmax#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "json-server": "^0.16.3"
   }
 }

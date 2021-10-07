@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { createMovement } from '../actions/index';
 import { Field, reduxForm } from 'redux-form';
 import history from '../history';
-import data from './data.json';
 
 const useStyles = makeStyles(() => ({
     addPage: {
@@ -71,58 +70,9 @@ const renderError = ({ error, touched }) => {
 
 const AddPage = (props) => {
     const classes = useStyles();
-    // const onSubmit = (formValues) => {
-    //     props.createMovement(formValues);
-    // };
-    const handleSaveToPC = (jsonData,filename) => {
-        const fileData = JSON.stringify(jsonData);
-        const blob = new Blob([fileData], {type: "text/plain"});
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.click();
-      };
-
     const onSubmit = (formValues) => {
         history.push('/');
-        return handleSaveToPC();
-
-        //BELOW THIS IS DIFFERENT CODE
-
-        // var fs = require('browserify-fs');
-
-        // var ourfaker = [];
-
-        // for (let i=0; i<=25; i++) {
-        //     var data = {};
-        //     data.name = formValues;
-        //     ourfaker.push(data);
-        // };
-
-        // fs.writeFile('dataBase.json', JSON.stringify(ourfaker), (err) => {
-        //     if (err) throw err;
-        //     console.log('It\'s saved!');
-        //     var text = fs.readFileSync("dataBase.json");
-        //     var string = text.toString('utf-8')
-        //     var textByLine = string.split("\n")
-        //     console.log(textByLine);
-
-        // });
-
-        //BELOW THIS IS DIFFERENT CODE
-
-        // const formString = JSON.stringify(formValues);
-        // const fs = require('browserify-fs');
-        // const path = require('path');
-        // fs.mkdir(path.join(__dirname, 'test'), function() {
-        //     fs.writeFile('/data.json', formString, function() {
-        //         fs.readFile('/data.json', 'utf-8', function(err, data) {
-        //             console.log(data, "data");
-        //         });
-        //     });
-        // });
-        // console.log(props.move, "move state");
-        // console.log(formValues, "formValues");
+        props.createMovement(formValues);
     };
 
     return (
