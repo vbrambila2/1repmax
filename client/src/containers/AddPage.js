@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createMovement } from '../actions/index';
 import { Field, reduxForm } from 'redux-form';
 import history from '../history';
+import data from '../data.json';
 
 const useStyles = makeStyles(() => ({
     addPage: {
@@ -72,7 +73,9 @@ const AddPage = (props) => {
     const classes = useStyles();
     const onSubmit = (formValues) => {
         history.push('/');
-        props.createMovement(formValues);
+        //props.createMovement(formValues);
+        const stateMovement = data
+        console.log(stateMovement, "SM");
     };
 
     return (

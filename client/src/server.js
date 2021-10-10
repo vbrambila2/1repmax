@@ -3,7 +3,7 @@ var data = fs.readFileSync('data.json');
 var movements = JSON.parse(data);
 console.log(movements);
 
-//console.log('server is running');
+console.log('server is running');
 
 var express = require('express');
 
@@ -15,7 +15,13 @@ function listening() {
     console.log('Listening...');
 };
 
-app.use(express.static('website'));
+app.use(express.static('public'));
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 
 app.get('/add/:name/:weight', addMove);
 

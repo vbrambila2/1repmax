@@ -21,12 +21,12 @@ const HomePage = (props) => {
     const classes = useStyles();
 
     const displayData = () => {
-        console.log(data);
+        console.log(data, "data");
         const moveArray = Object.entries(data);
         const moveMap = moveArray.map(movement => {
             return (
                 <div 
-                    key={movement}
+                    key={movement} 
                 >
                 {movement} - {movement.weight}lbs
                 </div>
