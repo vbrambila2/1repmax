@@ -73,9 +73,9 @@ const AddPage = (props) => {
     const classes = useStyles();
     const onSubmit = (formValues) => {
         history.push('/');
-        //props.createMovement(formValues);
-        const stateMovement = data
-        console.log(stateMovement, "SM");
+        props.createMovement(formValues);
+        // const stateMovement = data
+        // console.log(stateMovement, "SM");
     };
 
     return (
