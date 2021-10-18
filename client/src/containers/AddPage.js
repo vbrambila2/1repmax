@@ -74,6 +74,7 @@ const AddPage = (props) => {
     const onSubmit = (formValues) => {
         history.push('/');
         props.createMovement(formValues);
+        //FAKE COMMENT
         // const stateMovement = data
         // console.log(stateMovement, "SM");
     };
