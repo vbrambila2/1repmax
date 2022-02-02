@@ -73,7 +73,7 @@ const Header = (props) => {
                 variant="contained"
                 className={classes.homeButton}
                 onClick={() => history.push("/")}>   
-                Home
+                Home 
             </Button>
             {title}
             <div className={classes.fakeText}>-------</div>
